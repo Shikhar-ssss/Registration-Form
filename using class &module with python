@@ -1,0 +1,12 @@
+class dirt:
+    def __init__(self,n,a,no):
+        self.fullname = n
+        self.age = a
+        self.phone = no
+    def fullname(self):
+        return self.fullname
+    def age(self):
+        return self.age
+    def phone(self):
+        return self.phone
+
