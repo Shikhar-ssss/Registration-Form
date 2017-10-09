@@ -1,0 +1,3 @@
+string = raw_input("enter a string")
+print(string)
+print(string[::-1])
