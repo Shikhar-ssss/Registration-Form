@@ -1,0 +1,58 @@
+
+<html>
+<head>
+<title>MERRY CHRISTMAS</title>
+<script>
+            function drawTextAlongArc(context, str, centerX, centerY, radius, angle){
+                context.save();
+                context.translate(centerX, centerY);
+                context.rotate(-1 * angle / 2);
+                context.rotate(-1 * (angle / str.length) / 2);
+                for (var n = 0; n < str.length; n++) {
+                    context.rotate(angle / str.length);
+                    context.save();
+                    context.translate(0, -1 * radius);
+                    var char = str[n];
+                    context.fillText(char, 0, 0);
+                    context.restore();
+                }
+                context.restore();
+            }
+             
+            window.onload = function(){
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+                 
+                context.font = "20pt Arial";
+                context.textAlign = "center";
+                 
+                var centerX = canvas.width / 2;
+                var centerY = canvas.height - 30;
+                var angle = Math.PI * 0.8; // radians
+                var radius = 100;
+                drawTextAlongArc(context, "MERRY CHRISTMAS", centerX, centerY, radius, angle);
+            };
+        </script>
+</head>
+<body style="font-family:'Comic Sans MS', cursive;">
+<section 
+		style="width:500px; height:650px; 
+		background-image:url(k/back.jpg); 
+  	  position:absolute; 
+  	  background-size:cover;
+    margin-left:400px;
+    border-radius:5px; color:#FFF;">
+    <center><img src="k/bells-icon.png"></center>
+    <canvas id="myCanvas" width="500" height="200"></canvas>
+    </section>
+<div style="width:480px; height:470px; margin:10px; position:absolute;">
+<div style=" width:460px; height:70px; margin:10px; position:absolute;">
+</div>
+<div>
+</div>
+<div>
+</div>
+</div>
+</div>
+</body>
+</html>
